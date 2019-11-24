@@ -13,6 +13,8 @@ gem 'active_model_serializers', '~> 0.10.10'
 gem 'factory_bot_rails'
 gem 'kaminari'
 gem 'rspec-rails'
+gem 'bcrypt', '~> 3.1', '>= 3.1.13'
+gem 'rack-cors', :require => 'rack/cors'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production

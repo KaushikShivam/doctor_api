@@ -11,8 +11,9 @@ describe DoctorsController do
       create_list :doctor, 2
       get :index
       json = JSON.parse(response.body)
-      json_data = json[:data]
+      json_data = json['data']
       expect(json_data.length).to eq(2)
+      
     end
     
   end

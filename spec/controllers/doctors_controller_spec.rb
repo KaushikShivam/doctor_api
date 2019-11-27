@@ -9,9 +9,9 @@ describe DoctorsController do
     end
     
     it 'should return proper json' do
-      doctors = create_list :doctor, 2
+      create_list :doctor, 2
       subject
-      doctors.each_with_index do |doctor, index|
+      Doctor.recent.each_with_index do |doctor, index|
         expect(json_data[index]['attributes']).to eq({
           'name' => doctor.name,
           'category' => doctor.category,

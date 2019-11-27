@@ -62,7 +62,7 @@ RSpec.describe Doctor, type: :model do
       expect(described_class.recent).to eq(
         [new_doctor, old_doctor]
       )
-      old_doctor.update_column :created_at , Time.now
+      old_doctor.update_column :created_at, Time.now
       expect(described_class.recent).to eq(
         [old_doctor, new_doctor]
       )

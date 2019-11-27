@@ -1,6 +1,6 @@
 class DoctorsController < ApplicationController
   def index
-    render json: Doctor.all
+    render json: Doctor.recent
   end
   
   def show

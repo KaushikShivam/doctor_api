@@ -1,15 +1,16 @@
 require 'rails_helper'
 
 describe DoctorsController do
+  subject {get :index}
   describe '#index' do
     it 'should return a success response' do
-      get :index
+      subject
       expect(response).to have_http_status(:ok)
     end
     
     it 'should return proper json' do
       doctors = create_list :doctor, 2
-      get :index
+      subject
       doctors.each_with_index do |doctor, index|
         expect(json_data[index]['attributes']).to eq({
           'name' => doctor.name,

@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   resources :registrations, only: [:create]
   delete :logout, to: "sessions#logout"
   get :logged_in, to: "sessions#logged_in"
+  
+  # Doctor route
+  resources :doctors, only: [:index]
+  
   root to: "static#home"
 end

@@ -4,6 +4,7 @@ class DoctorsController < ApplicationController
   end
   
   def show
+    render json: Doctor.find(params[:id])
   end
   
   private

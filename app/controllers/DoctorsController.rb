@@ -4,4 +4,7 @@ class DoctorsController < ApplicationController
       status: "haha"
     }
   end
+  
+  def show
+  end
 end

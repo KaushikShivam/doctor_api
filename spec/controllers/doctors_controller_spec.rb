@@ -8,6 +8,7 @@ describe DoctorsController do
     end
     
     it 'should return proper json' do
+      create_list :doctor, 2
       get :index
       json = JSON.parse(response.body)
       json_data = json[:data]

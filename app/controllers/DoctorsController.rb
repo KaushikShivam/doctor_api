@@ -1,8 +1,7 @@
 class DoctorsController < ApplicationController
   def index
-    render json: {
-      status: "haha"
-    }
+    doctors = Doctor.all
+    render json: doctors
   end
   
   def show

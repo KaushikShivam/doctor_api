@@ -55,4 +55,18 @@ RSpec.describe Doctor, type: :model do
     end
   end
   
+  describe ".recent" do
+    it 'should return recent doctor first' do
+      old_doctor = create :doctor
+      new_doctor = create :doctor
+      expect(described_class.recent).to eq(
+        [new_doctor, old_doctor]
+      )
+      old_doctor.update_column :created_at , Time.now
+      expect(described_class.recent).to eq(
+        [old_doctor, new_doctor]
+      )
+    end
+  end
+  
 end

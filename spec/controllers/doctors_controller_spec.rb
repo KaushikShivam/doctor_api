@@ -10,8 +10,6 @@ describe DoctorsController do
     it 'should return proper json' do
       doctors = create_list :doctor, 2
       get :index
-      json = JSON.parse(response.body)
-      json_data = json['data']
       doctors.each_with_index do |doctor, index|
         expect(json_data[index]['attributes']).to eq({
           'name' => doctor.name,

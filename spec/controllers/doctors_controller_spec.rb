@@ -25,5 +25,13 @@ describe DoctorsController do
       end
     end
     
+    it 'should return doctors in an ascending order by date' do
+      old_doctor = create :doctor
+      new_doctor = create :doctor
+      subject
+      expect(json_data.first['id']).to eq(new_doctor.id.to_s)
+      expect(json_data.last['id']).to eq(old_doctor.id.to_s)
+    end
+    
   end
 end

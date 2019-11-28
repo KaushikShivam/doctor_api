@@ -1,10 +1,10 @@
 class DoctorsController < ApplicationController
   def index
-    render json: Doctor.recent
+    render json: serializer.new(Doctor.recent)
   end
   
   def show
-    render json: Doctor.find(params[:id])
+    render json: serializer.new(Doctor.find(params[:id]))
   end
   
   private

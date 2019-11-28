@@ -10,6 +10,8 @@ class DoctorsController < ApplicationController
   def create
     doctor = Doctor.new(doctor_params)
     if doctor.valid?
+      doctor.save
+      render json: doctor, status: :created
     else
       render json: doctor, serializer: ActiveModel::Serializer::ErrorSerializer, status: :unprocessable_entity
     end
@@ -18,6 +20,9 @@ class DoctorsController < ApplicationController
   private
 
   def doctor_params
+    params.require(:data)
+    .require(:attributes)
+    .permit(:name, :category, :description, :fee, :exp, :likes, :phone, :address) || 
     ActionController::Parameters.new
   end
 end

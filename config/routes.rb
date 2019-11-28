@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get :logged_in, to: "sessions#logged_in"
   
   # Doctor route
-  resources :doctors, only: [:index, :show]
+  resources :doctors, only: [:index, :show, :create]
   
   root to: "static#home"
 end

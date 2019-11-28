@@ -20,7 +20,8 @@ describe DoctorsController do
           'exp' => doctor.exp,
           'likes' => doctor.likes,
           'phone' => doctor.phone,
-          'address' => doctor.address
+          'address' => doctor.address,
+          'image' => doctor.image,
         })
       end
     end
@@ -53,7 +54,8 @@ describe DoctorsController do
         'exp' => doctor.exp,
         'likes' => doctor.likes,
         'phone' => doctor.phone,
-        'address' => doctor.address
+        'address' => doctor.address,
+        'image' => doctor,
       })
     end
   end

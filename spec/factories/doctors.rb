@@ -8,5 +8,6 @@ FactoryBot.define do
     likes { "MyString" }
     phone { "MyString" }
     address { "MyString" }
+    image { "MyString" }
   end
 end

@@ -22,7 +22,7 @@ class DoctorsController < ApplicationController
   def doctor_params
     params.require(:data)
     .require(:attributes)
-    .permit(:name, :category, :description, :fee, :exp, :likes, :phone, :address) || 
+    .permit(:name, :image, :category, :description, :fee, :exp, :likes, :phone, :address) || 
     ActionController::Parameters.new
   end
 end

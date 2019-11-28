@@ -53,6 +53,12 @@ RSpec.describe Doctor, type: :model do
       expect(doctor).not_to be_valid
       expect(doctor.errors.messages[:address]).to include("can't be blank")
     end
+    
+    it 'should validate the presence of image' do
+      doctor = build(:doctor, image: '')
+      expect(doctor).not_to be_valid
+      expect(doctor.errors.messages[:image]).to include("can't be blank")
+    end
   end
   
   describe ".recent" do

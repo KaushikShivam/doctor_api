@@ -6,7 +6,11 @@ describe 'doctors router' do
   end
 
   it 'should route to the doctors show action' do
-    expect(get doctor_path(2)).to route_to('doctors#show', id: '2')
+    expect(get '/doctors/2').to route_to('doctors#show', id: '2')
+  end
+  
+  it 'should route to doctors create action' do
+    expect(post '/doctors').to route_to('doctors#create')
   end
   
 end

@@ -60,12 +60,4 @@ describe DoctorsController do
     end
   end
   
-  # describe '#create' do
-  #   subject {post :create}
-  #   context 'when invalid code provided' do
-  #     before { request.headers['authorization'] = 'Invalid Token' }
-      
-  #   end
-  # end
-  
 end

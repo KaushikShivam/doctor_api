@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   # Doctor route
   resources :doctors, only: [:index, :show, :create]
+  resources :appointments, only: [:index, :create]
   
   root to: "static#home"
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AppointmentsController < ApplicationController
   include CurrentUserConcern
   def index
@@ -8,23 +10,21 @@ class AppointmentsController < ApplicationController
       render json: doctor, serializer: ActiveModel::Serializer::ErrorSerializer, status: :unprocessable_entity
     end
   end
-  
+
   def create
     if @current_user
       appointment = @current_user.appointments.build(appointment_params)
-      if appointment.save
-        render json: appointment, status: :ok
-      end
+      render json: appointment, status: :ok if appointment.save
     else
       render json: doctor, serializer: ActiveModel::Serializer::ErrorSerializer, status: :unprocessable_entity
     end
   end
-  
+
   private
+
   def appointment_params
     params.require(:data).require(:attributes)
       .permit(:patient, :reason, :date, :time, :doctor_id) ||
       ActionController::Parameters.new
   end
-  
 end

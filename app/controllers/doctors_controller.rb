@@ -38,6 +38,6 @@ class DoctorsController < ApplicationController
   end
 
   def filter_params
-    params[:filter].permit(:name, :category, :fee, :exp, :likes) if params[:filter]
+    params[:filter]&.permit(:name, :category, :fee, :exp, :likes)
   end
 end

@@ -1,3 +1,3 @@
 class DoctorSerializer < ActiveModel::Serializer
-  attributes :name, :category, :description, :fee, :exp, :likes, :phone, :address
+  attributes :name, :category, :description, :fee, :exp, :likes, :phone, :address, :image
 end

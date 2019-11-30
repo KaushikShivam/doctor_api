@@ -35,6 +35,6 @@ module DoctorApi
     
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
-    config.api_only = true
+    config.api_only = false
   end
 end

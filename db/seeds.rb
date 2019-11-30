@@ -19,8 +19,8 @@ categories = [
   'Heart',
 ]
 
-likes = ['100', '200', '300', '400', '500', '600']
-exp = ['2', '4', '6', '8', '10', '12']
+likes = [100, 200, 300, 400, 500, 600]
+exp = [2, 4, 6, 8, 10, 12]
 
 40.times do
   category = categories.sample

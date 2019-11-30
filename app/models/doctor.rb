@@ -12,10 +12,28 @@ class Doctor < ApplicationRecord
   validates :address, presence: true
   validates :image, presence: true
   
-  scope :recent, -> { order(created_at: :desc) }
+  def self.recent
+    order(created_at: :desc)
+  end
   
-  # def self.recent
-  #   order(created_at: :desc)
-  # end
+  def self.filter_category(filter)
+    where(category: filter)
+  end
+  
+  def self.filter_name(filter)
+    where("name LIKE ?", "%#{filter}%")
+  end
+  
+  def self.filter_fee(filter)
+    where("fee <= ?", filter) 
+  end
+  
+  def self.filter_exp(filter)
+    where("exp >= ?", filter) 
+  end
+  
+  def self.filter_likes(filter)
+    where("likes >= ?", filter) 
+  end
   
 end

@@ -1,12 +1,23 @@
+# frozen_string_literal: true
+
 class DoctorsController < ApplicationController
   def index
-    render json: Doctor.recent
+    doctors = Doctor.recent
+    if filter_params
+      doctors = doctors.filter_category(filter_params[:category]) if filter_params[:category]
+      doctors = doctors.filter_name(filter_params[:name]) if filter_params[:name]
+      doctors = doctors.filter_fee(filter_params[:fee]) if filter_params[:fee]
+      doctors = doctors.filter_exp(filter_params[:exp]) if filter_params[:exp]
+      doctors = doctors.filter_likes(filter_params[:likes]) if filter_params[:likes]
+    end
+
+    render json: doctors
   end
-  
+
   def show
     render json: Doctor.find(params[:id])
   end
-  
+
   def create
     doctor = Doctor.new(doctor_params)
     if doctor.valid?
@@ -16,13 +27,17 @@ class DoctorsController < ApplicationController
       render json: doctor, serializer: ActiveModel::Serializer::ErrorSerializer, status: :unprocessable_entity
     end
   end
-  
+
   private
 
   def doctor_params
     params.require(:data)
-    .require(:attributes)
-    .permit(:name, :image, :category, :description, :fee, :exp, :likes, :phone, :address) || 
-    ActionController::Parameters.new
+      .require(:attributes)
+      .permit(:name, :image, :category, :description, :fee, :exp, :likes, :phone, :address) ||
+      ActionController::Parameters.new
+  end
+
+  def filter_params
+    params[:filter].permit(:name, :category, :fee, :exp, :likes) if params[:filter]
   end
 end

@@ -6,6 +6,10 @@ class Appointment < ApplicationRecord
 
   validates_presence_of :date
   validates_presence_of :time
-  validates_uniqueness_of :patient
-  validates_uniqueness_of :reason
+  validates_presence_of :patient
+  validates_presence_of :reason
+  
+  def self.recent
+    order(created_at: :desc)
+  end
 end

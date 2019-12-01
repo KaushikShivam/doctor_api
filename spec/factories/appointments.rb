@@ -6,7 +6,7 @@ FactoryBot.define do
     reason { 'MyString' }
     date { 'MyString' }
     time { 'MyString' }
-    user { nil }
-    doctor { nil }
+    user { create :user }
+    doctor { create :doctor }
   end
 end

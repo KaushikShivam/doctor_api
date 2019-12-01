@@ -5,9 +5,9 @@ FactoryBot.define do
     sequence(:name) { |n| "MyString #{n}" }
     category { 'MyString' }
     description { 'MyText' }
-    fee { 'MyString' }
-    exp { 'MyString' }
-    likes { 'MyString' }
+    fee { 500 }
+    exp { 200 }
+    likes { 100 }
     phone { 'MyString' }
     address { 'MyString' }
     image { 'MyString' }

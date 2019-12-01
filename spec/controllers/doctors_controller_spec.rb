@@ -57,7 +57,7 @@ describe DoctorsController do
         'likes' => doctor.likes,
         'phone' => doctor.phone,
         'address' => doctor.address,
-        'image' => doctor
+        'image' => doctor.image
       )
     end
   end

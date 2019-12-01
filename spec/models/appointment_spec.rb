@@ -25,26 +25,26 @@ RSpec.describe Appointment, type: :model do
       expect(appointment).not_to be_valid
       expect(appointment.errors.messages[:date]).to include("can't be blank")
     end
-    
+
     it 'should validate the presence of time' do
       appointment = build(:appointment, time: '')
       expect(appointment).not_to be_valid
       expect(appointment.errors.messages[:time]).to include("can't be blank")
     end
-    
+
     it 'should validate the presence of doctor' do
       appointment = build(:appointment, doctor: nil)
       expect(appointment).not_to be_valid
-      expect(appointment.errors.messages[:doctor]).to include("must exist")
+      expect(appointment.errors.messages[:doctor]).to include('must exist')
     end
-    
+
     it 'should validate the presence of user' do
       appointment = build(:appointment, user: nil)
       expect(appointment).not_to be_valid
-      expect(appointment.errors.messages[:user]).to include("must exist")
+      expect(appointment.errors.messages[:user]).to include('must exist')
     end
   end
-  
+
   describe '.recent' do
     it 'should return recent appointment first' do
       old_appointment = create :appointment
@@ -58,5 +58,4 @@ RSpec.describe Appointment, type: :model do
       )
     end
   end
-  
 end

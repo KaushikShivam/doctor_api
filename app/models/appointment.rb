@@ -8,7 +8,7 @@ class Appointment < ApplicationRecord
   validates_presence_of :time
   validates_presence_of :patient
   validates_presence_of :reason
-  
+
   def self.recent
     order(created_at: :desc)
   end

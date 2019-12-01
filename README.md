@@ -10,7 +10,7 @@
 
 ## Description
 
-This is a capstone project I built to graduate at Microverse. Here are the project [requirements](https://www.notion.so/Final-Capstone-Project-Doctor-appointments-9b345aad940b4f0a951049fcb3da159f) .
+This is an API service for the capstone project I built to graduate at Microverse. Here are the project [requirements](https://www.notion.so/Final-Capstone-Project-Doctor-appointments-9b345aad940b4f0a951049fcb3da159f) .
 
 I used Pivotal Tracker as a project management tool to take care of my sprints. Here's a [link](https://www.pivotaltracker.com/n/projects/2421361)
 

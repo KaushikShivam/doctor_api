@@ -3,9 +3,11 @@
 class DoctorsController < ApplicationController
   def index
     doctors = Doctor.recent
-    apply_filer(doctors) if filter_params
-
-    render json: doctors
+    if filter_params
+      render json: apply_filer(doctors)
+    else
+      doctors
+    end
   end
 
   def apply_filer(doctors)

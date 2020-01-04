@@ -1,24 +1,44 @@
-# README
+# [Doctorly](https://doctorly-api.herokuapp.com/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Doctorly](screenshot.png)
 
-Things you may want to cover:
+## Table of content
 
-* Ruby version
+- [Description](#description)
+- [Installation](#installation)
+- [Contact](#contact)
 
-* System dependencies
+## Description
 
-* Configuration
+This is an API service for the capstone project I built to graduate at Microverse. Here are the project [requirements](https://www.notion.so/Final-Capstone-Project-Doctor-appointments-9b345aad940b4f0a951049fcb3da159f) .
 
-* Database creation
+I used Pivotal Tracker as a project management tool to take care of my sprints. Here's a [link](https://www.pivotaltracker.com/n/projects/2421361)
 
-* Database initialization
+The design is taken from [here](https://www.behance.net/gallery/77208667/MediCo-Medical-mobile-app-UIUX-design)
+Design credit goes to [Vinisha Panjikar](https://www.behance.net/vinishapanjikar)
 
-* How to run the test suite
+[Live Link](https://doctorly-api.herokuapp.com/)
 
-* Services (job queues, cache servers, search engines, etc.)
+## Installation
 
-* Deployment instructions
+1. Clone the project to your local directory
 
-* ...
+```
+git clone https://github.com/KaushikShivam/doctor_api
+```
+
+2. Run `bundle install`
+
+3. Run `rails db:create`
+
+3. Run `rails s`
+
+## Contact
+
+You can contact me at:
+
+- [Email](shivamkaushikofficial@gmail.com)
+- [Linkedin](https://www.linkedin.com/in/shivam-kaushik-bb8162102/)
+- [Twitter](https://twitter.com/kShivamDev)
+- [Medium](https://medium.com/@shivamkaushikofficial)
+
